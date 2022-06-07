@@ -4,9 +4,9 @@ Set DeviceManager = CreateObject("WIA.DeviceManager")
 ' List all Available Devices by Name and DeviceID
 ' The following example shows how to list all available Deviceices by name and DeviceID. 
 Dim i, n, id 'As Integer
-n = DeviceManager.DeviceInfos.Count
-WScript.Echo "Number of Deviceice found = " & n
-For i = 1 to DeviceManager.DeviceInfos.Count
+count = DeviceManager.DeviceInfos.Count
+WScript.Echo "Number of Deviceice found = " & count
+For i = 1 to count
 	WScript.Echo " Device " & i & ":" & vbTab & DeviceManager.DeviceInfos(i).Properties("Name").Value & vbTab & "(" & DeviceManager.DeviceInfos(i).DeviceID & ")"
 	If InStr(DeviceManager.DeviceInfos(i).Properties("Name").Value,"CanoScan") Then
 		id = i
@@ -30,6 +30,7 @@ Device.Items(1).Properties("6152").Value = 7002 'vertical extent DPI x inches ta
 'Device.Items(1).Properties("3098").Value = 1700 'page width
 'Device.Items(1).Properties("3099").Value = 2196 'page height
 
+'https://docs.microsoft.com/en-us/previous-versions/windows/desktop/wiaaut/-wiaaut-consts-formatid
 Set img = CommonDialog.ShowTransfer(Device.Items(1), "{B96B3CAB-0728-11D3-9D7B-0000F81EF32E}", true)
 
 img.SaveFile WScript.Arguments.Item(0)
