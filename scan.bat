@@ -1,5 +1,10 @@
 @echo off
 
+if "%1"=="" (
+	echo Pass first argument: 'grey' or 'color'. Example `scan.bat grey`
+	exit /b 1
+)
+
 if %1==grey (
 	set color=2
 ) else (
