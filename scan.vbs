@@ -2,7 +2,7 @@ Set CommonDialog = CreateObject("WIA.CommonDialog")
 Set DeviceManager = CreateObject("WIA.DeviceManager")
 
 ' List all Available Devices by Name and DeviceID
-' The following example shows how to list all available Deviceices by name and DeviceID.
+' The following example shows how to list all available Devices by name and DeviceID.
 Dim i, count, id, deviceName, deviceID
 count = DeviceManager.DeviceInfos.Count
 WScript.Echo "Number of Devices found = " & count
