@@ -6,7 +6,7 @@
 - Canon CanoScan LiDE 110
 - Canon CanoScan LiDE 120
 
-## How to use on Windows 10
+## How to use on Windows
 
 1. Clone repository `git clone git@github.com:nfxpnk/canonlidescan.git`
 1. Copy `config.bat.sample` to `config.bat`
